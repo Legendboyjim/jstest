@@ -1,0 +1,41 @@
+
+let nftCount = 0;
+
+function mintNFT(id, name, brand) {
+  const nft = {
+    id: id,
+    name: name,
+    brand: brand
+  };
+  nftCount++;
+  return nft;
+}
+
+
+const nfts = [];
+
+
+function listNFTs() {
+  for (let i = 0; i < nfts.length; i++) {
+    console.log("\nID: " + nfts[i].id);
+    console.log("Name: " + nfts[i].name);
+    console.log("Rarity: " + nfts[i].brand);
+   
+  }
+}
+
+function getTotalSupply() {
+  console.log("\nTotal NFTs Minted: " + nftCount);
+}
+
+const nft1 = mintNFT("NFT 1", "Luffy", "Nokia");
+nfts.push(nft1);
+const nft2 = mintNFT("NFT 2", "Zorro", "Sony");
+nfts.push(nft2);
+const nft3 = mintNFT("NFT 3", "Sanji", "motorolla");
+nfts.push(nft3);
+const nft4 = mintNFT("NFT 4", "Nami", "Iphone");
+nfts.push(nft4);
+
+listNFTs();
+getTotalSupply();
